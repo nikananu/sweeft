@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\nika\Desktop\polidrom.cs" Link="polidrom.cs" />
-  </ItemGroup>
-
 </Project>
