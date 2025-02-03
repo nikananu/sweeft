@@ -3,9 +3,10 @@ using System;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         // პალინდრომის შემოწმება
+        /*/
         string inputText = "A man, a plan, a canal, Panama!";
         bool isPalindrome = PalindromeChecker.IsPalindrome(inputText);
         Console.WriteLine($"Is '{inputText}' a palindrome? {isPalindrome}");
@@ -29,5 +30,29 @@ class Program
         int stairCount = 10;
         int stairresult = CountVariant.CountVariants(stairCount);
         Console.WriteLine($"Number of ways to climb {stairCount} stairs: {stairresult}");
+
+
+        await CountryDataGenerator.GenerateCountryDataFiles();
+
+        await SemaphoreExample.Run();/*/
+        
+        
+        
+        using (var context = new classroomDb())
+        {
+            var teachers = context.Pupils
+                .Where(p => p.FirstName == "გიორგი")
+                .SelectMany(p => p.TeacherPupils)
+                .Select(tp => tp.Teacher)
+                .ToList();
+
+           
+            foreach (var teacher in teachers)
+            {
+                Console.WriteLine($"Teacher: {teacher.FirstName} {teacher.LastName}");
+            }
+        }
+
+        Console.ReadKey();
     }
 }

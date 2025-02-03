@@ -12,7 +12,7 @@ namespace ConsoleApp4
         {
             text = text.ToLower();
 
-            // შევადაროთ ტექსტი მის საპირისპირო ვერსიას
+            
             string reversedText = new string(text.Reverse().ToArray());
 
             return text == reversedText;
